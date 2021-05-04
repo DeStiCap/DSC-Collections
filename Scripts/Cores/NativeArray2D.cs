@@ -18,6 +18,14 @@ namespace DSC.Collections
 
         #region Constructor
 
+        public NativeArray2D(int nSizeX, int nSizeY, Allocator hAllocator)
+        {
+            m_nSizeX = nSizeX;
+            m_nSizeY = nSizeY;
+
+            m_narData = new NativeArray<T>(nSizeX * nSizeY, hAllocator);
+        }
+
         public NativeArray2D(T[,] array, Allocator hAllocator)
         {
             int nLength = array.Length;
@@ -36,12 +44,12 @@ namespace DSC.Collections
             }
         }
 
-        public NativeArray2D(int nSizeX, int nSizeY, Allocator hAllocator)
+        public NativeArray2D(NativeArray<T> array, int nSizeX, Allocator hAllocator)
         {
             m_nSizeX = nSizeX;
-            m_nSizeY = nSizeY;
+            m_nSizeY = array.Length / nSizeX;
 
-            m_narData = new NativeArray<T>(nSizeX * nSizeY, hAllocator);
+            m_narData = new NativeArray<T>(array, hAllocator);
         }
 
         #endregion

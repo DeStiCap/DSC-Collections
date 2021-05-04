@@ -20,6 +20,15 @@ namespace DSC.Collections
         #endregion
 
         #region Constructor
+        
+        public NativeArray3D(int nSizeX, int nSizeY, int nSizeZ, Allocator hAllocator)
+        {
+            m_nSizeX = nSizeX;
+            m_nSizeY = nSizeY;
+            m_nSizeZ = nSizeZ;
+
+            m_narData = new NativeArray<T>(nSizeX * nSizeY * nSizeZ, hAllocator);
+        }
 
         public NativeArray3D(T[,,] array, Allocator hAllocator)
         {
@@ -43,13 +52,13 @@ namespace DSC.Collections
             }
         }
 
-        public NativeArray3D(int nSizeX, int nSizeY, int nSizeZ, Allocator hAllocator)
+        public NativeArray3D(NativeArray<T> array, int nSizeX,int nSizeY, Allocator hAllocator)
         {
             m_nSizeX = nSizeX;
             m_nSizeY = nSizeY;
-            m_nSizeZ = nSizeZ;
+            m_nSizeZ = array.Length / nSizeX / nSizeY;
 
-            m_narData = new NativeArray<T>(nSizeX * nSizeY * nSizeZ, hAllocator);
+            m_narData = new NativeArray<T>(array, hAllocator);
         }
 
         #endregion
