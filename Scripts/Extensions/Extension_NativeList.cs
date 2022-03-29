@@ -9,7 +9,7 @@ namespace DSC.Collections
         /// </summary>
         /// <param name="array">Native List</param>
         /// <typeparam name="T">Data type in list</typeparam>
-        public static void DisposeSafety<T>(this NativeList<T> array) where T : struct
+        public static void DisposeSafety<T>(this NativeList<T> array) where T : unmanaged
         {
             if(array.IsCreated)
                 array.Dispose();

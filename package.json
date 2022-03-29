@@ -2,18 +2,18 @@
     "name": "com.dsc.collections",
     "author": "DeStiCap",
     "displayName": "DSC Collections",
-    "version": "0.0.2-preview.1",
+    "version": "0.0.3-preview.1",
     "unity": "2020.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/DeStiCap/DSC-Collections.git",
-        "revision": "bb0744f9bf89a56ed33050c6bee774b26cb48a6b"
+        "revision": "129c6701ef33e56e8fc4c4a88c1c70428b007dbc"
     },
     "description": "Collections system for unity.",
     "keywords": [
         "Collections"
     ],
     "dependencies": {
-        "com.unity.collections": "0.15.0-preview.21"
+        "com.unity.collections": "1.2.3"
     }
 }

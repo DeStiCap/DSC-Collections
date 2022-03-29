@@ -1,3 +1,6 @@
+## [0.0.3-preview.1] - 2022-03-29
+- Changed dependency Collections to version 1.2.3
+
 ## [0.0.2-preview.1] - 2021-05-17
 - Add Extension_NativeArray class.
 - Add Extension_NativeArray2D class.
